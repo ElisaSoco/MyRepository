@@ -1,3 +1,12 @@
+let listHTMLelement= document.querySelector("#fruit-list");
+console.log(listHTMLelement);
+// listHTMLelement.innerHTML= "<li class='text-light'>Hola este es un parrafo</li>"
+// listHTMLelement.innerHTML+= "<h2>Añadido mas contenido</h2>"-----> se usa para matener lo anterior e incorporar cosas nuevas
+let totalamountHTMLelement = document.querySelector("#total-amount");
+
+
+
+
 let total = 0;
 let fruta = null;
 do {
@@ -14,28 +23,39 @@ do {
     switch (fruta) {
         case 'naranja':
             precioKg = 150;
-            document.write(`El kg de la ${fruta} vale $ ${precioKg} el subtotal: ${precioKg * kg} <br>`);
+            listHTMLelement.innerHTML += `<li class ="list-group-item">${fruta} - cantidad: ${kg} - precio unitario ${precioKg} <strong> SUBTOTAL: $ ${precioKg*kg} </strong></li>`;
+            // document.write(`El kg de la ${fruta} vale $ ${precioKg} el subtotal: ${precioKg * kg} <br>`);
             subtotal = precioKg * kg;
             break;
         case 'frutilla':
             precioKg = 1100;
-            document.write(`El kg de la ${fruta} vale $ ${precioKg} el subtotal: ${precioKg * kg} <br>`);
+            listHTMLelement.innerHTML += `<li class ="list-group-item">${fruta} - cantidad: ${kg} - precio unitario ${precioKg} <strong> SUBTOTAL: $ ${precioKg*kg} </strong></li>`;
+            // document.write(`El kg de la ${fruta} vale $ ${precioKg} el subtotal: ${precioKg * kg} <br>`);
             subtotal = precioKg * kg;
             break;
         case 'kiwi':
             precioKg = 200;
-            document.write(`El kg de la ${fruta} vale $ ${precioKg} el subtotal: ${precioKg * kg} <br>`);
+            listHTMLelement.innerHTML += `<li class ="list-group-item">${fruta} - cantidad: ${kg} - precio unitario ${precioKg} <strong> SUBTOTAL: $ ${precioKg*kg} </strong></li>`;
+            // document.write(`El kg de la ${fruta} vale $ ${precioKg} el subtotal: ${precioKg * kg} <br>`);
             subtotal = precioKg * kg;
             break;
         case 'palta':
             precioKg = 700;
-            document.write(`El kg de la ${fruta} vale $ ${precioKg} el subtotal: ${precioKg * kg} <br>`);
+            listHTMLelement.innerHTML += `<li class ="list-group-item">${fruta} - cantidad: ${kg} - precio unitario ${precioKg} <strong> SUBTOTAL: $ ${precioKg*kg} </strong></li>`;
+            // document.write(`El kg de la ${fruta} vale $ ${precioKg} el subtotal: ${precioKg * kg} <br>`);
+            subtotal = precioKg * kg;
+            break;
+        case 'uva':
+            precioKg = 100;
+            listHTMLelement.innerHTML += `<li class ="list-group-item">${fruta} - cantidad: ${kg} - precio unitario ${precioKg} <strong> SUBTOTAL: $ ${precioKg*kg} </strong></li>`;
+            // document.write(`El kg de la ${fruta} vale $ ${precioKg} el subtotal: ${precioKg * kg} <br>`);
             subtotal = precioKg * kg;
             break;
         default:
-            console.log("la fruta ingresada no es correcta");
+            console.warn("la fruta ingresada no es correcta");
     }
     total += subtotal;
 } while (fruta !== null)
-document.write(`<h1>Total a pagar ${total}</h1>`);
+
+totalamountHTMLelement.innerHTML = `$ ${total}`;
 

@@ -1,3 +1,12 @@
 body {
     background-color: aliceblue;
 }
+#total-amount{
+    font-size: 5rem;
+    font-weight: bold;
+    color: blanchedalmond;
+}
+#total-amount::first-letter{
+    font-size: 2rem;
+    
+}
